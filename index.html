@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>ただ雲は流れて ｜ WHY I FLY</title>
+<meta name="description" content="敗戦間近の架空国家。特攻を命じられた少年兵と、それを否定しつづける女性の、五日間の会話劇。">
+<meta name="theme-color" content="#07090c">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game">
+
+  <!-- ============ 背景 ============ -->
+  <div id="bgA" class="bg bg-black"></div>
+  <div id="bgB" class="bg bg-black"></div>
+  <div id="grain"></div>
+  <div id="vignette"></div>
+
+  <!-- ============ 立ち絵 ============ -->
+  <div id="chara" data-emo="calm">
+    <svg viewBox="0 0 300 660" class="charaSvg" aria-hidden="true">
+      <defs>
+        <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a2f38"/>
+          <stop offset="1" stop-color="#14171d"/>
+        </linearGradient>
+        <linearGradient id="hairg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2b2723"/>
+          <stop offset="1" stop-color="#15130f"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 外套・肩 -->
+      <path d="M150 268 C 96 276 62 312 50 372 L 30 660 L 270 660 L 250 372 C 238 312 204 276 150 268 Z" fill="url(#coat)"/>
+      <!-- 襟 -->
+      <path d="M150 268 L 112 292 L 150 372 L 188 292 Z" fill="#3a4049"/>
+      <path d="M150 268 L 124 286 L 150 340 L 176 286 Z" fill="#1b1f25"/>
+      <!-- 首 -->
+      <path d="M126 232 L 174 232 L 174 280 L 126 280 Z" fill="#c9b6a4"/>
+      <path d="M126 246 C 140 268 160 268 174 246 L 174 232 L 126 232 Z" fill="#a8927e"/>
+      <!-- 髪（後ろ） -->
+      <path d="M150 62 C 88 62 70 118 74 178 C 78 246 70 300 62 342 L 110 336 C 104 280 104 236 106 200 L 194 200 C 196 236 196 280 190 336 L 238 342 C 230 300 222 246 226 178 C 230 118 212 62 150 62 Z" fill="url(#hairg)"/>
+      <!-- 顔 -->
+      <ellipse cx="150" cy="160" rx="54" ry="66" fill="#e6d3c2"/>
+      <!-- 頬から顎への薄い陰（左右で濃さを変える） -->
+      <path d="M97 150 C 99 182 111 208 136 220 C 113 214 99 195 95 166 Z" fill="#cdb3a0" opacity=".5"/>
+      <path d="M203 152 C 201 180 192 202 173 214 C 191 205 202 186 205 165 Z" fill="#cdb3a0" opacity=".28"/>
+      <!-- 鼻（ごく薄い片側の影のみ） -->
+      <path d="M151.5 168 C 153.2 175 152.6 179.6 149.4 180.6" fill="none" stroke="#c6a692" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+      <!-- 前髪 -->
+      <path d="M150 62 C 92 62 82 116 92 156 C 96 130 104 116 116 108 C 132 122 168 122 186 106 C 198 116 204 132 208 156 C 218 116 208 62 150 62 Z" fill="url(#hairg)"/>
+      <path d="M96 108 C 104 150 100 190 92 218 L 76 214 C 84 178 86 138 84 112 Z" fill="url(#hairg)"/>
+      <path d="M204 108 C 196 150 200 190 208 218 L 224 214 C 216 178 214 138 216 112 Z" fill="url(#hairg)"/>
+      <!-- 前髪の細い毛束 -->
+      <path d="M123 104 C 119 122 117.5 140 119.5 155" fill="none" stroke="#1e1b17" stroke-width="3" stroke-linecap="round" opacity=".92"/>
+      <path d="M179 102 C 184 119 185.5 137 183 153" fill="none" stroke="#1e1b17" stroke-width="2.6" stroke-linecap="round" opacity=".88"/>
+      <path d="M141 98 C 137 110 134.5 119 133.5 129" fill="none" stroke="#221e19" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+      <path d="M163 100 C 167 111 169 118 169.5 126" fill="none" stroke="#221e19" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+      <!-- 髪のごく薄いハイライト -->
+      <path d="M111 98 C 127 79 173 79 189 97" fill="none" stroke="#544a40" stroke-width="5" stroke-linecap="round" opacity=".3"/>
+
+      <!-- ---- 表情：冷静（わずかに非対称） ---- -->
+      <g class="face calm">
+        <path d="M117 157 L 141 158.2" stroke="#3b3129" stroke-width="4" stroke-linecap="round"/>
+        <path d="M159 159 L 183 158.4" stroke="#3b3129" stroke-width="3.8" stroke-linecap="round"/>
+        <path d="M115 141 L 140 144.6" stroke="#4a3d33" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+        <path d="M185 143 L 160 145.6" stroke="#4a3d33" stroke-width="2.8" stroke-linecap="round" opacity=".62"/>
+        <path d="M141.5 194.6 L 158.5 193.6" stroke="#a8776a" stroke-width="3.4" stroke-linecap="round"/>
+      </g>
+
+      <!-- ---- 表情：涙（理性が崩れた瞬間） ---- -->
+      <g class="face cry">
+        <!-- 目元のわずかな赤み -->
+        <ellipse cx="129" cy="167.5" rx="13" ry="4.6" fill="#c2867a" opacity=".18"/>
+        <ellipse cx="171" cy="166.5" rx="12" ry="4.2" fill="#c2867a" opacity=".14"/>
+
+        <!-- 左目：強く歪み、細く squint -->
+        <path d="M117.5 161 C 124 156 135 155.4 141.5 160 C 135 165 124 165.6 117.5 161 Z" fill="#6b5a4c"/>
+        <circle cx="130" cy="161.2" r="4.1" fill="#2b2420"/>
+        <path d="M117 161.6 C 124 155 135.4 154.4 142 159.6" fill="none" stroke="#3b3129" stroke-width="4.6" stroke-linecap="round"/>
+        <path d="M119 163 C 125.5 166.2 134 166.2 140.6 161.4" fill="none" stroke="#a3897a" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+
+        <!-- 右目：やや開き、視線は正面〜わずかに下 -->
+        <path d="M159 159.6 C 165.6 153.4 176.8 153.2 183.4 158.6 C 177 164.8 166 165.2 159 159.6 Z" fill="#5b4c40"/>
+        <circle cx="170.6" cy="159.8" r="4.5" fill="#2b2420"/>
+        <circle cx="172.4" cy="157.6" r="1.3" fill="#f2f6f7" opacity=".5"/>
+        <path d="M158.5 160.2 C 165 152.2 177.4 152 184 158.2" fill="none" stroke="#3b3129" stroke-width="4.6" stroke-linecap="round"/>
+        <path d="M160.4 161.6 C 167 165.4 177 165 183.4 159.8" fill="none" stroke="#a3897a" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+
+        <!-- 眉：内側だけわずかに上、外側は低い。左右で高さを変える -->
+        <path d="M112 144.6 C 121 140.4 131 138.2 139.6 138.2" fill="none" stroke="#4a3d33" stroke-width="3.4" stroke-linecap="round" opacity=".85"/>
+        <path d="M188 145.6 C 179 141.6 169.6 139.6 161 139.8" fill="none" stroke="#4a3d33" stroke-width="3.1" stroke-linecap="round" opacity=".78"/>
+        <path d="M150.4 142.6 C 149.6 146 149.2 148.6 149.4 150.6" fill="none" stroke="#4a3d33" stroke-width="2" stroke-linecap="round" opacity=".26"/>
+
+        <!-- 口：わずかに開き、左右非対称、震えた輪郭 -->
+        <path d="M140.2 193.4 C 144.4 190.9 147.8 193.8 151.6 192.1 C 154.8 190.9 157.4 192.4 159.6 193.2" fill="none" stroke="#9c6c5e" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M142.6 193.8 C 147 196.6 154 196.2 158.2 193.4 C 153.6 194.6 147 194.9 142.6 193.8 Z" fill="#7d4f45" opacity=".38"/>
+
+        <!-- 涙：頬が濡れている程度に。粒も落下もなし -->
+        <g class="tears">
+          <path d="M119.4 172.6 C 118.2 180 117.8 187 116.2 196" fill="none" stroke="#dde6e9" stroke-width="2.2" stroke-linecap="round" opacity=".58"/>
+          <path d="M123.4 172.4 C 122.6 176.4 122 180 121.4 184.2" fill="none" stroke="#dde6e9" stroke-width="1.5" stroke-linecap="round" opacity=".28"/>
+          <path d="M170.4 170.4 C 171 175.6 171.9 180 172 185" fill="none" stroke="#dde6e9" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+          <ellipse cx="117.8" cy="183" rx="4.8" ry="14" fill="#e8eff1" opacity=".11" transform="rotate(-5 117.8 183)"/>
+          <ellipse cx="171.4" cy="178" rx="3.8" ry="10" fill="#e8eff1" opacity=".09" transform="rotate(4 171.4 178)"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ============ WHY I FIGHT ============ -->
+  <aside id="why" aria-hidden="true">
+    <h2>WHY<span> I </span>FIGHT</h2>
+    <ul id="whyList"></ul>
+  </aside>
+
+  <!-- ============ 大文字表示 ============ -->
+  <div id="big"><div id="bigInner"></div></div>
+
+  <!-- ============ 紙 ============ -->
+  <div id="paper"><div id="paperInner"></div></div>
+
+  <!-- ============ 選択肢 ============ -->
+  <div id="choices"></div>
+
+  <!-- ============ メッセージ ============ -->
+  <div id="msg">
+    <div id="who"></div>
+    <div id="text"></div>
+    <div id="next">▼</div>
+  </div>
+
+  <!-- ============ タイトル ============ -->
+  <div id="title">
+    <div class="titleBox">
+      <p class="ttl-sub">WHY I FLY</p>
+      <h1 class="ttl-main">ただ雲は流れて</h1>
+      <p class="ttl-lead">敗戦間近の、ある架空の国。<br>特攻を命じられた少年兵と、<br>それを否定しつづける女性の、五日間。</p>
+      <button id="startBtn" type="button">は じ め る</button>
+      <p class="ttl-note">
+        プレイ時間 約15〜20分／クリックまたはタップで進みます<br>
+        この作品は特攻を美化しません。登場する国家・軍隊・作戦・人物はすべて架空であり、<br>実在の戦争・組織とは関係ありません。
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ エンド ============ -->
+  <div id="endcard">
+    <div class="endBox">
+      <p class="end-sub">WHY I FLY</p>
+      <h2 class="end-main">ただ雲は流れて</h2>
+      <p class="end-word">END</p>
+      <button id="replayBtn" type="button">もう一度見る</button>
+    </div>
+  </div>
+
+  <button id="sndBtn" type="button" title="音">♪</button>
+  <div id="fade"></div>
+</div>
+
+<script src="story.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
